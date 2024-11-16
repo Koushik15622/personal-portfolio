@@ -8,6 +8,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "..", "build")));
 app.use("/", router);
 
 app.listen(5000, () => console.log("Server Running"));
@@ -33,7 +34,7 @@ contactEmail.verify((error) => {
 });
 
 router.get("/", (req, res) => {
-  const filePath = path.join(__dirname, "src", "assets", "files", "Koushik-P.pdf"); 
+  const filePath = path.join(__dirname, "..", "build", "assets", "files", "Koushik-P.pdf");
   console.log("Serving file from:", filePath); 
 
   res.sendFile(filePath, (err) => {

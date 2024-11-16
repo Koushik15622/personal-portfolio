@@ -8,7 +8,7 @@ export const Newsletter = () => {
     
     try {
       // Fetch the file from the server
-      let response = await fetch("https://backend-x9yo.vercel.app/", {
+      let response = await fetch("https://koushik-pln.vercel.app/", {
         method: "GET",
       });
   
