@@ -89,13 +89,13 @@ export const Background = () => {
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                       <Nav.Item>
-                        <Nav.Link eventKey="first">Work Experience</Nav.Link>
+                        <Nav.Link eventKey="first">Work <br></br>Experience</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="second">Academic Journey</Nav.Link>
+                        <Nav.Link eventKey="second">Academic <br></br>Journey</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="third">Projects & Research</Nav.Link>
+                        <Nav.Link eventKey="third">Projects & <br></br>Research</Nav.Link>
                       </Nav.Item>
                     </Nav>
                     <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
