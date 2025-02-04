@@ -95,7 +95,7 @@ export const Background = () => {
                         <Nav.Link eventKey="second">Academic <br></br>Journey</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="third">Projects & <br></br>Research</Nav.Link>
+                        <Nav.Link eventKey="third">Projects & Research</Nav.Link>
                       </Nav.Item>
                     </Nav>
                     <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
