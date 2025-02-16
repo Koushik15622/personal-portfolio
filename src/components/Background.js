@@ -1,3 +1,4 @@
+import React from 'react';
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import comp1 from "../assets/img/comp1.png";
@@ -74,6 +75,10 @@ export const Background = () => {
     }
   ];
 
+  const navLinkStyle = {
+    width: '100%',
+    textAlign: 'center'
+  };
 
   return (
     <section className="project" id="background">
@@ -89,13 +94,13 @@ export const Background = () => {
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                       <Nav.Item>
-                        <Nav.Link eventKey="first">Work <br></br>Experience</Nav.Link>
+                        <Nav.Link eventKey="first" style={navLinkStyle}>Work <br></br>Experience</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="second">Academic <br></br>Journey</Nav.Link>
+                        <Nav.Link eventKey="second" style={navLinkStyle}>Academic <br></br>Journey</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="third">Projects<br></br>& Research </Nav.Link>
+                        <Nav.Link eventKey="third" style={navLinkStyle}>Projects<br></br>& Research </Nav.Link>
                       </Nav.Item>
                     </Nav>
                     <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
