@@ -7,7 +7,7 @@ export const Newsletter = () => {
     e.preventDefault();
     
     try {
-      let response = await fetch("http://localhost:5000/resume", {
+      let response = await fetch("https://personal-portfolio-7dt4.vercel.app/resume", {
         method: "GET",
       });
   
