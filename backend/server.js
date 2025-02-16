@@ -13,15 +13,11 @@ app.use("/", router);
 
 app.listen(5000, () => console.log("Server Running"));
 
-// Correct the environment variables
-console.log(process.env.EMAIL_USER);
-console.log(process.env.EMAIL_PASS);
-
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER, // Use EMAIL_USER
-    pass: process.env.EMAIL_PASS, // Use EMAIL_PASS
+    user: process.env.EMAIL_USER, 
+    pass: process.env.EMAIL_PASS,
   },
 });
 
@@ -34,6 +30,10 @@ contactEmail.verify((error) => {
 });
 
 router.get("/", (req, res) => {
+  res.send("Server Running");
+});
+
+router.get("/resume", (req, res) => {
   const filePath = path.join(__dirname, "..", "build", "assets", "files", "Koushik-P.pdf");
   console.log("Serving file from:", filePath); 
 

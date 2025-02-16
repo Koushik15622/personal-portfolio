@@ -1,6 +1,9 @@
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
+import dev from "../assets/img/developer-skill.png";
+import test from "../assets/img/test-skill.png";
+import web from "../assets/img/web-skill.png";
+import devops from "../assets/img/devops-skill.png";
+import data from "../assets/img/data-skill.png";
+import python from "../assets/img/python-skill.png";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import arrow1 from "../assets/img/arrow1.svg";
@@ -38,27 +41,27 @@ export const Skills = () => {
                         <p>The sliders below provide a high-level overview of my expertise in each area. <br></br> For a comprehensive list of my skills, please refer to my resume, which is available for download below.</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
-                                <img src={meter1} alt="Image" />
+                                <img src={dev} alt="Image" />
                                 <h5>Software Development</h5>
                             </div>
                             <div className="item">
-                                <img src={meter2} alt="Image" />
+                                <img src={test} alt="Image" />
                                 <h5>Penetration testing</h5>
                             </div>
                             <div className="item">
-                                <img src={meter3} alt="Image" />
+                                <img src={web} alt="Image" />
                                 <h5>Web Designing</h5>
                             </div>
                             <div className="item">
-                                <img src={meter1} alt="Image" />
+                                <img src={devops} alt="Image" />
                                 <h5>DevOps management</h5>
                             </div>
                             <div className="item">
-                                <img src={meter1} alt="Image" />
+                                <img src={data} alt="Image" />
                                 <h5>Data engineering</h5>
                             </div>
                             <div className="item">
-                                <img src={meter1} alt="Image" />
+                                <img src={python} alt="Image" />
                                 <h5>Python Programming</h5>
                             </div>
                         </Carousel>

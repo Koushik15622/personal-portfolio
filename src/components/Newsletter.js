@@ -7,24 +7,20 @@ export const Newsletter = () => {
     e.preventDefault();
     
     try {
-      // Fetch the file from the server
-      let response = await fetch("http://localhost:5000/", {
+      let response = await fetch("http://localhost:5000/resume", {
         method: "GET",
       });
   
-      // Check if the response is OK
       if (response.ok) {
-        // Convert the response to a Blob
         const blob = await response.blob();
-        // Create a download link
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.style.display = "none";
         a.href = url;
-        a.download = "Koushik-P.pdf"; // The file name for the download
+        a.download = "Koushik-P.pdf"; 
         document.body.appendChild(a);
         a.click();
-        window.URL.revokeObjectURL(url); // Clean up the URL object
+        window.URL.revokeObjectURL(url); 
         console.log("File downloaded successfully");
       } else {
         console.log("Failed to download the file");
