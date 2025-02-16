@@ -33,18 +33,6 @@ router.get("/", (req, res) => {
   res.send("Server Running");
 });
 
-router.get("/resume", (req, res) => {
-  const filePath = path.join(__dirname, "..", "build", "assets", "files", "Koushik-P.pdf");
-  console.log("Serving file from:", filePath); 
-
-  res.sendFile(filePath, (err) => {
-    if (err) {
-      console.log("Error sending file:", err);
-      res.status(500).send("Failed to download the file.");
-    }
-  });
-});
-
 router.post("/contact", (req, res) => {
   const name = `${req.body.firstName} ${req.body.lastName}`;
   const email = req.body.email;
