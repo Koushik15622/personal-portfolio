@@ -5,6 +5,7 @@ import comp1 from "../assets/img/comp1.png";
 import comp2 from "../assets/img/comp2.png";
 import comp3 from "../assets/img/comp3.png";
 import comp4 from "../assets/img/comp4.png";
+import comp5 from "../assets/img/comp5.png";
 import edu2 from "../assets/img/edu2.png";
 import iot from "../assets/img/iot.png";
 import python from "../assets/img/python.png";
@@ -18,23 +19,28 @@ export const Background = () => {
 
   const companies = [
     {
-      title: "Graduate Teaching Assistant",
-      description: "04/2024 - Present",
+      title: "Backend Developer",
+      description: "Tampa, USA | 12/2024 - Present",
+      imgUrl: comp5,
+    },
+    {
+      title: "Graduate Student Assistant",
+      description: "Tampa, USA | 04/2024 - 05/2025",
       imgUrl: comp4,
     },
     {
       title: "Software Developer",
-      description: "07/2023 - 11/2023",
+      description: "Hyderabad, India | 07/2023 - 11/2023",
       imgUrl: comp3,
     },
     {
       title: "Software Developer",
-      description: "06/2022 - 06/2023",
+      description: "Hyderabad, India | 06/2022 - 06/2023",
       imgUrl: comp2,
     },
     {
       title: "Associate Software Engineer",
-      description: "09/2021 - 06/2022",
+      description: "Hyderabad,India | 09/2021 - 06/2022",
       imgUrl: comp1,
     }
   ];
