@@ -12,7 +12,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["Software Developer", "Security Engineer", "DevOps Engineer", "Penetration Tester", "Web Designer", "Python Programmer"];
+  const toRotate = ["Software Developer", "Security Engineer", "Explorer :)","Penetration Tester", "Web Designer","Explorer :)"];
   const period = 1000;
 
   useEffect(() => {
@@ -56,9 +56,9 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <span className="tagline">Welcome to my Portfolio</span>
-                  <h1>{`Hi! I'm Koushik PLN`} </h1>
-                  <h2>{`A Resourceful `}<span className="txt-rotate" dataPeriod={period} data-rotate={toRotate}><span className="wrap">{text}</span></span></h2>
+                  <span className="tagline">Welcome Explorers!</span>
+                  <h1>{`I'm Koushik PLN`} </h1>
+                  <h2>{`You've explored the presence of another `}<br></br><span className="txt-rotate" dataPeriod={period} data-rotate={toRotate}><span className="wrap">{text}</span></span></h2>
                   <br></br>
                   <p>I love to explore various tools and technologies in the fields of software security and development. I strongly believe that Learning is a never ending process</p>
                   <button onClick={() => console.log('connect')}>Keep Exploring <ArrowDownCircle size={25} /></button>

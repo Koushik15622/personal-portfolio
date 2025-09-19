@@ -31,6 +31,16 @@ export const Skills = () => {
     }
   };
 
+  const skills = [
+    {title: "Software Development", image: dev},
+    {title: "Penetration testing", image: test},
+    {title: "Web Designing", image: web},
+    {title: "DevOps management", image: devops},
+    {title: "Data engineering", image: data},
+    {title: "Python Programming", image: python}
+
+  ]
+  
   return (
     <section className="skill" id="skills">
         <div className="container">
@@ -40,30 +50,12 @@ export const Skills = () => {
                         <h2>Skills</h2>
                         <p>The sliders below provide a high-level overview of my expertise in each area. <br></br> For a comprehensive list of my skills, please refer to my resume, which is available for download below.</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                            <div className="item">
-                                <img src={dev} alt="Image" />
-                                <h5>Software Development</h5>
-                            </div>
-                            <div className="item">
-                                <img src={test} alt="Image" />
-                                <h5>Penetration testing</h5>
-                            </div>
-                            <div className="item">
-                                <img src={web} alt="Image" />
-                                <h5>Web Designing</h5>
-                            </div>
-                            <div className="item">
-                                <img src={devops} alt="Image" />
-                                <h5>DevOps management</h5>
-                            </div>
-                            <div className="item">
-                                <img src={data} alt="Image" />
-                                <h5>Data engineering</h5>
-                            </div>
-                            <div className="item">
-                                <img src={python} alt="Image" />
-                                <h5>Python Programming</h5>
-                            </div>
+                            {skills.map((skill, index) => (
+                                <div className="item" key={index}>
+                                    <img src={skill.image} alt={skill.title} />
+                                    <h5>{skill.title}</h5>
+                                </div>
+                            ))}
                         </Carousel>
                     </div>
                 </div>

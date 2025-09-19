@@ -60,14 +60,14 @@ export const Background = () => {
 
   const projects = [
     {
+      title: "Ongoing Research Project",
+      description: "AI workflow for Risk Assessment",
+      imgUrl: python,
+    },
+    {
       title: "Research Initiative",
       description: "Blockchain security system in IoT devices",
       imgUrl: iot,
-    },
-    {
-      title: "Ongoing Research Project",
-      description: "RAG model to analyze of CISO Interviews",
-      imgUrl: python,
     },
     {
       title: "Individual Project",
