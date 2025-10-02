@@ -61,7 +61,6 @@ export const Banner = () => {
                   <h2>{`You've explored the presence of another `}<br></br><span className="txt-rotate" dataPeriod={period} data-rotate={toRotate}><span className="wrap">{text}</span></span></h2>
                   <br></br>
                   <p>I love to explore various tools and technologies in the fields of software security and development. I strongly believe that Learning is a never ending process</p>
-                  <button onClick={() => console.log('connect')}>Keep Exploring <ArrowDownCircle size={25} /></button>
                 </div>}
             </TrackVisibility>
           </Col>
@@ -88,6 +87,9 @@ export const Banner = () => {
           </Col>
         </Row>
       </Container>
+      <br></br>
+      <br></br>
+      <br></br>
     </section>
   )
 }
