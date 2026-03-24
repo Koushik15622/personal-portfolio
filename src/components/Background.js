@@ -19,8 +19,8 @@ export const Background = () => {
 
   const companies = [
     {
-      title: "Backend Developer",
-      description: "Tampa, USA | 12/2024 - Present",
+      title: "AI Software Engineer",
+      description: "Tampa, USA | 06/2025 - Present",
       imgUrl: comp5,
     },
     {
