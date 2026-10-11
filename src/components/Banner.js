@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/comp.gif";
 import me from "../assets/img/me.jpeg"
-import { ArrowDownCircle } from 'react-bootstrap-icons';
+import { ArrowDownCircle, ArrowRightCircle, Download } from 'react-bootstrap-icons';
+import { HashLink } from 'react-router-hash-link';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import { Particles } from "./Particles";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -50,46 +52,54 @@ export const Banner = () => {
 
   return (
     <section className="banner" id="home">
+      <Particles />
       <Container>
         <Row className="aligh-items-center">
-          <Col xs={13} md={7} xl={7}>
+          <Col xs={12} md={7} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <span className="tagline">Welcome Explorers!</span>
                   <h1>{`I'm Koushik PLN`} </h1>
-                  <h2>{`You've explored the presence of another `}<br></br><span className="txt-rotate" dataPeriod={period} data-rotate={toRotate}><span className="wrap">{text}</span></span></h2>
-                  <br></br>
+                  <h2>{`You've explored the presence of another `}<br></br><span className="txt-rotate" dataPeriod={period} data-rotate={toRotate}><span className="wrap">{text}</span><span className="cursor" aria-hidden="true"></span></span></h2>
                   <p>I love to explore various tools and technologies in the fields of software security and development. I strongly believe that Learning is a never ending process</p>
+                  <div className="hero-cta">
+                    <HashLink to="#connect" className="hero-cta-primary">
+                      <span>Let’s Connect</span>
+                      <ArrowRightCircle size={18} />
+                    </HashLink>
+                    <a
+                      className="hero-cta-secondary"
+                      href="https://drive.google.com/file/d/1X4bcoPrly2-TqMiiecje8ZejN4QLaRVI/view?usp=sharing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span>Download Resume</span>
+                      <Download size={18} />
+                    </a>
+                  </div>
                 </div>}
             </TrackVisibility>
           </Col>
-          <Col xs={13} md={3} xl={3}>
+          <Col xs={12} md={5} xl={5}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <div className={isVisible ? "bounce animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img" />
-
+                <div className={isVisible ? "hero-media animate__animated animate__zoomIn" : "hero-media"}>
+                  <div className="hero-media-card">
+                    <img src={headerImg} alt="Coding illustration" />
+                  </div>
+                  <div className="hero-media-card hero-media-photo">
+                    <img src={me} alt="Koushik PLN" />
+                  </div>
                 </div>
               }
             </TrackVisibility>
           </Col>
-          <Col xs={13} md={2} xl={2}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <br></br>
-                  <br></br>
-                  <br></br>
-                  <img src={me} alt="Header Img" />
-                </div>}
-            </TrackVisibility>
-          </Col>
         </Row>
       </Container>
-      <br></br>
-      <br></br>
-      <br></br>
+      <a className="scroll-cue" href="#skills" aria-label="Scroll to skills">
+        <ArrowDownCircle size={32} />
+      </a>
     </section>
   )
 }
