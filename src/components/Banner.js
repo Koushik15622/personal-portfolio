@@ -1,95 +1,45 @@
-import { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/img/comp.gif";
-import me from "../assets/img/me.jpeg"
-import { ArrowDownCircle } from 'react-bootstrap-icons';
-import 'animate.css';
-import TrackVisibility from 'react-on-screen';
+import { useEffect, useState } from "react";
+import { ParticleField } from "./ParticleField";
+import portrait from "../assets/img/thinking-avatar.png";
+import computer from "../assets/img/comp.gif";
 
-export const Banner = () => {
-  const [loopNum, setLoopNum] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [text, setText] = useState('');
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const [index, setIndex] = useState(1);
-  const toRotate = ["Software Developer", "Security Engineer", "Explorer :)","Penetration Tester", "Web Designer","Explorer :)"];
-  const period = 1000;
+const roles = ["AI Software Engineer", "Security Engineer", "Software Developer", "Penetration Tester", "Web Designer"];
 
+function Role() {
+  const [word, setWord] = useState(0);
+  const [length, setLength] = useState(1);
+  const [deleting, setDeleting] = useState(false);
+  const role = roles[word];
   useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
-
-    return () => { clearInterval(ticker) };
-  }, [text])
-
-  const tick = () => {
-    let i = loopNum % toRotate.length;
-    let fullText = toRotate[i];
-    let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
-
-    setText(updatedText);
-
-    if (isDeleting) {
-      setDelta(prevDelta => prevDelta / 2);
-    }
-
-    if (!isDeleting && updatedText === fullText) {
-      setIsDeleting(true);
-      setIndex(prevIndex => prevIndex - 1);
-      setDelta(period);
-    } else if (isDeleting && updatedText === '') {
-      setIsDeleting(false);
-      setLoopNum(loopNum + 1);
-      setIndex(1);
-      setDelta(300);
-    } else {
-      setIndex(prevIndex => prevIndex + 1);
-    }
-  }
-
-  return (
-    <section className="banner" id="home">
-      <Container>
-        <Row className="aligh-items-center">
-          <Col xs={13} md={7} xl={7}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <span className="tagline">Welcome Explorers!</span>
-                  <h1>{`I'm Koushik PLN`} </h1>
-                  <h2>{`You've explored the presence of another `}<br></br><span className="txt-rotate" dataPeriod={period} data-rotate={toRotate}><span className="wrap">{text}</span></span></h2>
-                  <br></br>
-                  <p>I love to explore various tools and technologies in the fields of software security and development. I strongly believe that Learning is a never ending process</p>
-                </div>}
-            </TrackVisibility>
-          </Col>
-          <Col xs={13} md={3} xl={3}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "bounce animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img" />
-
-                </div>
-              }
-            </TrackVisibility>
-          </Col>
-          <Col xs={13} md={2} xl={2}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <br></br>
-                  <br></br>
-                  <br></br>
-                  <img src={me} alt="Header Img" />
-                </div>}
-            </TrackVisibility>
-          </Col>
-        </Row>
-      </Container>
-      <br></br>
-      <br></br>
-      <br></br>
-    </section>
-  )
+    const full = length === role.length;
+    const timer = setTimeout(() => {
+      if (full && !deleting) setDeleting(true);
+      else if (length === 0 && deleting) {
+        setWord((word + 1) % roles.length);
+        setDeleting(false);
+      } else setLength(length + (deleting ? -1 : 1));
+    }, full && !deleting ? 1800 : deleting ? 42 : 90);
+    return () => clearTimeout(timer);
+  }, [length, word, deleting, role]);
+  return <h2><span className="visually-hidden static-role">{roles[0]}</span><span aria-hidden="true" className="typed-role">{role.slice(0, length)}</span></h2>;
 }
+
+export const Banner = () => (
+  <section className="banner" id="home">
+    <ParticleField />
+    <div className="hero-stage container">
+      <div className="hero-intro">
+        <div className="tagline">Field notes on software &amp; security</div>
+        <h1>Koushik <em>PLN</em></h1>
+        <Role />
+        <p>I explore the intersection of software development and security, from AI pipelines to secure cloud systems.</p>
+      </div>
+      <div className="hero-art">
+        <img className="hero-portrait" src={portrait} alt="Koushik PLN" />
+        <div className="thought-bubble" aria-hidden="true">
+          <img className="hero-computer" src={computer} alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+);
