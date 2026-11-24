@@ -1,5 +1,5 @@
 import { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/scss/bootstrap.scss';
 import './App.css';
 import { NavBar } from "./components/NavBar";
 import { Banner } from "./components/Banner";

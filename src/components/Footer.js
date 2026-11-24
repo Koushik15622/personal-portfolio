@@ -14,9 +14,9 @@ export const Footer = () => {
           </Col>
           <Col size={12} sm={6} className="text-center text-sm-end">
             <div className="social-icon">
-              <a href="#"><img src={navIcon1} alt="Icon" /></a>
-              <a href="#"><img src={navIcon2} alt="Icon" /></a>
-              <a href="#"><img src={navIcon3} alt="Icon" /></a>
+              <a href="https://www.linkedin.com/in/koushik-pln-0b84911a4/"><img src={navIcon1} alt="LinkedIn" /></a>
+              <a href="https://www.facebook.com/koushik.pln.1"><img src={navIcon2} alt="Facebook" /></a>
+              <a href="https://github.com/Koushik15622/"><img src={navIcon3} alt="GitHub" /></a>
             </div>
             <p>Copyright 2022. All Rights Reserved</p>
           </Col>
