@@ -4,12 +4,11 @@ import logo from '../assets/img/inverted_image.png';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
-import { HashLink } from 'react-router-hash-link';
 import {
   BrowserRouter as Router
 } from "react-router-dom";
 
-export const NavBar = () => {
+export const NavBar = ({ dark, toggleTheme }) => {
 
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
@@ -34,11 +33,15 @@ export const NavBar = () => {
 
   return (
     <Router>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+      <Navbar variant={dark ? "dark" : "light"} expand="md" className={scrolled ? "scrolled" : ""}>
         <Container>
           <Navbar.Brand href="/">
             <img src={logo} alt="Logo" />
           </Navbar.Brand>
+          <button type="button" className="theme-toggle" aria-label="Dark theme" aria-pressed={dark}
+            title={dark ? "Switch to light theme" : "Switch to dark theme"} onClick={toggleTheme}>
+            <span aria-hidden="true">{dark ? "\u2600" : "\u263e"}</span>
+          </button>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
           </Navbar.Toggle>
@@ -54,9 +57,6 @@ export const NavBar = () => {
                 <a href="https://www.facebook.com/koushik.pln.1"><img src={navIcon2} alt="" /></a>
                 <a href="https://github.com/Koushik15622/"><img src={navIcon3} alt="" /></a>
               </div>
-              <HashLink to='#connect'>
-                <button className="vvd"><span>Let’s Connect</span></button>
-              </HashLink>
             </span>
           </Navbar.Collapse>
         </Container>
