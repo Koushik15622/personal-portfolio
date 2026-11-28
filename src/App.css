@@ -170,3 +170,12 @@ nav.navbar {
 [data-theme="dark"] .project .nav-pills { background:var(--surface); }
 [data-theme="dark"] .project .nav-pills .active { background:#abbaff; color:#171d32; }
 [data-theme="dark"] .footer { background:#10131e; }
+.shortener { max-width: 42rem; min-height: 65vh; margin: auto; padding: clamp(3rem, 9vw, 7rem) 1.25rem; }
+.shortener h1 { margin: 1.5rem 0; font-size: clamp(3rem, 8vw, 5rem); letter-spacing: -.06em; }
+.shortener form, .short-result { display: grid; gap: .85rem; justify-items: start; margin: 1.5rem 0; }
+.shortener input { width: 100%; border: 1px solid var(--line); border-radius: .85rem; background: var(--surface); color: var(--ink); padding: .9rem 1rem; }
+.shortener a, .project-launch { color: inherit; overflow-wrap: anywhere; }
+.shortener .vvd { background: var(--ink); color: var(--surface); }
+.project-launch { display: grid; gap: .6rem; align-content: center; height: calc(100% - 1.5rem); padding: 2rem; border-radius: 1.3rem; background: var(--surface); text-decoration: none; border: 1px solid var(--line); }
+.project-launch strong { font-size: 1.6rem; }
+.project-launch span { text-decoration: underline; }

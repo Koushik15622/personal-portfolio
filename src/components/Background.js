@@ -89,10 +89,11 @@ return (
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <span id="projects" />
                   <h2>Professional Background</h2>
                   <br></br>
                   <br></br>
-                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                  <Tab.Container id="projects-tabs" defaultActiveKey={window.location.hash === "#projects" ? "third" : "first"}>
                     <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                       <Nav.Item>
                         <Nav.Link eventKey="first">Work <br></br>Experience</Nav.Link>
@@ -135,6 +136,12 @@ return (
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
                         <Row>
+                          <Col xs={12} sm={6} md={4}>
+                            <a className="project-launch" href="/projects/url-shortener">
+                              <strong>URL shortener</strong>
+                              <span>Open project</span>
+                            </a>
+                          </Col>
                           {
                             projects.map((project, index) => {
                               return (

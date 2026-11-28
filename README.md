@@ -33,3 +33,18 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### URL shortener
+
+Open **Professional Background → Projects & Research → URL shortener**, or visit
+`/projects/url-shortener`. Short links use the same origin at `/s/<code>`.
+
+Copy `backend/.env.example` to `backend/.env` and fill in `MONGODB_URI`.
+The database defaults to `portfolio` (override with `MONGODB_DB`). The MongoDB
+user needs read/write access to the database. Keep the URI server-side.
+
+From the repository root, run `npm install --legacy-peer-deps` and `npm start`.
+The development server mounts the project API automatically. For a single Vercel
+deployment, use the repository root as the project directory and configure
+`MONGODB_URI` in its environment. The root Vercel functions handle link creation
+and redirects alongside the React build.

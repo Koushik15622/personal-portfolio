@@ -7,7 +7,10 @@ import { Skills } from "./components/Skills";
 import { Background } from "./components/Background";
 import { Footer } from "./components/Footer";
 
+import { UrlShortener } from "./components/UrlShortener";
+
 function App() {
+  const isShortener = /^\/projects\/url-shortener\/?$/.test(window.location.pathname);
   const [dark, setDark] = useState(() => {
     try {
       return localStorage.getItem("portfolio-theme") === "dark";
@@ -29,9 +32,13 @@ function App() {
   return (
     <div className="App" data-theme={dark ? "dark" : "light"}>
       <NavBar dark={dark} toggleTheme={toggleTheme} />
-      <Banner />
-      <Skills />
-      <Background />
+      {isShortener ? <UrlShortener /> : (
+        <>
+          <Banner />
+          <Skills />
+          <Background />
+        </>
+      )}
       <Footer />
     </div>
   );
