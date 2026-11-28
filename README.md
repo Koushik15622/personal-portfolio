@@ -43,8 +43,14 @@ Copy `backend/.env.example` to `backend/.env` and fill in `MONGODB_URI`.
 The database defaults to `portfolio` (override with `MONGODB_DB`). The MongoDB
 user needs read/write access to the database. Keep the URI server-side.
 
-From the repository root, run `npm install --legacy-peer-deps` and `npm start`.
-The development server mounts the project API automatically. For a single Vercel
-deployment, use the repository root as the project directory and configure
-`MONGODB_URI` in its environment. The root Vercel functions handle link creation
-and redirects alongside the React build.
+For local development, run `npm ci --prefix backend` and `npm start --prefix backend`
+from the repository root. The API defaults to port 5001. In a second terminal,
+run `npm ci --legacy-peer-deps` and `npm start` for the frontend. To override
+the API origin, copy the root `.env.example` to `.env` and set
+`REACT_APP_BACKEND_URL`. Restart the frontend after editing it.
+
+For Vercel, deploy the frontend from the repository root and the Express API
+from the `backend` root using `backend/vercel.json`. Set `MONGODB_URI` on the
+backend project and `REACT_APP_BACKEND_URL` to its HTTPS origin on the frontend
+project before rebuilding. Portfolio short links open the frontend, which
+forwards the code to the backend for the HTTP redirect.

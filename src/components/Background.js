@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
+import shortenerImage from "../assets/img/url-shortener.png";
 import { ProjectCard } from "./ProjectCard";
 import comp1 from "../assets/img/comp1.png";
 import comp2 from "../assets/img/comp2.png";
@@ -59,6 +60,12 @@ export const Background = () => {
   ];
 
   const projects = [
+    {
+      title: "URL shortener",
+      description: "Open project",
+      imgUrl: shortenerImage,
+      href: "/projects/url-shortener",
+    },
     {
       title: "Ongoing Research Project",
       description: "AI workflow for Risk Assessment",
@@ -136,12 +143,6 @@ return (
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
                         <Row>
-                          <Col xs={12} sm={6} md={4}>
-                            <a className="project-launch" href="/projects/url-shortener">
-                              <strong>URL shortener</strong>
-                              <span>Open project</span>
-                            </a>
-                          </Col>
                           {
                             projects.map((project, index) => {
                               return (
