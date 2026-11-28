@@ -136,7 +136,7 @@ nav.navbar {
 
 .hero-art { position:relative; width:min(100%,23rem); aspect-ratio:1.03; justify-self:center; }
 .hero-portrait { position:absolute; right:0; bottom:0; width:72%; height:auto; }
-.proj-imgbx { position:relative; overflow:hidden; border-radius:1.3rem; margin:0 0 1.5rem; }
+.proj-imgbx { display:block; text-decoration:none; position:relative; overflow:hidden; border-radius:1.3rem; margin:0 0 1.5rem; }
 .proj-imgbx img { display:block; width:100%; height:auto; }
 .proj-txtx { position:absolute; inset:0; display:grid; align-content:center; padding:1rem; text-align:center; color:white; background:linear-gradient(155deg,#174d49f5,#133532ed); transform:translateY(-101%); transition:transform .4s ease-in-out; }
 .proj-imgbx:hover .proj-txtx,.proj-imgbx:focus .proj-txtx { transform:translateY(0); }
@@ -170,3 +170,20 @@ nav.navbar {
 [data-theme="dark"] .project .nav-pills { background:var(--surface); }
 [data-theme="dark"] .project .nav-pills .active { background:#abbaff; color:#171d32; }
 [data-theme="dark"] .footer { background:#10131e; }
+.shortener { max-width: 62rem; min-height: 65vh; margin: auto; padding: clamp(3rem, 9vw, 7rem) 1.25rem; }
+.shortener h1 { margin: 1.5rem 0; font-size: clamp(3rem, 8vw, 5rem); letter-spacing: -.06em; }
+.shortener form { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); align-items: end; gap: .85rem; margin: 1.5rem 0; }
+.short-field { display: grid; gap: .45rem; min-width: 0; }
+.short-field small, .suffix-input span { color: var(--muted); }
+.suffix-input { position: relative; display: flex; }
+.suffix-input span { position: absolute; inset: 50% auto auto 1rem; transform: translateY(-50%); pointer-events: none; }
+.shortener .suffix-input input { padding-left: 2.5rem; min-width: 0; border-radius: .85rem 0 0 .85rem; }
+.suffix-input .vvd { flex: none; border-radius: 0 .85rem .85rem 0; }
+.short-result { display: flex; align-items: center; gap: .75rem; margin: 1.5rem 0; }
+.short-result .vvd { display: grid; place-items: center; flex: none; width: 44px; height: 44px; padding: 0; }
+@media (max-width: 640px) {
+  .shortener form { grid-template-columns: minmax(0, 1fr); }
+}
+.shortener input { width: 100%; border: 1px solid var(--line); border-radius: .85rem; background: var(--surface); color: var(--ink); padding: .9rem 1rem; }
+.shortener a { color: inherit; overflow-wrap: anywhere; }
+.shortener .vvd { background: var(--ink); color: var(--surface); }

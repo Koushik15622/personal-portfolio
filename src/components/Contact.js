@@ -1,3 +1,4 @@
+import { backendUrl } from "../backendUrl";
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
@@ -26,7 +27,7 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    let response = await fetch("https://personal-portfolio-7dt4.vercel.app/contact", {
+    let response = await fetch(backendUrl("/contact"), {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",

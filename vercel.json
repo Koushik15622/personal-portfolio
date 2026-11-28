@@ -1,0 +1,8 @@
+{
+  "framework": "create-react-app",
+  "installCommand": "npm ci --legacy-peer-deps",
+  "rewrites": [
+    { "source": "/s/:code", "destination": "/index.html" },
+    { "source": "/projects/url-shortener", "destination": "/index.html" }
+  ]
+}

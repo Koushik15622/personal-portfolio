@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
+import shortenerImage from "../assets/img/url-shortener.png";
 import { ProjectCard } from "./ProjectCard";
 import comp1 from "../assets/img/comp1.png";
 import comp2 from "../assets/img/comp2.png";
@@ -60,6 +61,12 @@ export const Background = () => {
 
   const projects = [
     {
+      title: "URL shortener",
+      description: "Open project",
+      imgUrl: shortenerImage,
+      href: "/projects/url-shortener",
+    },
+    {
       title: "Ongoing Research Project",
       description: "AI workflow for Risk Assessment",
       imgUrl: python,
@@ -89,10 +96,11 @@ return (
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <span id="projects" />
                   <h2>Professional Background</h2>
                   <br></br>
                   <br></br>
-                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                  <Tab.Container id="projects-tabs" defaultActiveKey={window.location.hash === "#projects" ? "third" : "first"}>
                     <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                       <Nav.Item>
                         <Nav.Link eventKey="first">Work <br></br>Experience</Nav.Link>
